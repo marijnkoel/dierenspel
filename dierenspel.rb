@@ -12,3 +12,12 @@ dieren = ['aal','aap','adder','alligator','anaconda','ansjovis','antilope','aren
 'stekelvarken','stokstaartje','teek','tijger','tonijn','uilvlinder','uil','valk','varken',
 'vinvis','vleermuis','vogelbekdier','vos','walvis','walibi','wasbeer','wesp','wezel','wolf','wolfspin','worm','yak','zalm','zebra',
 'zeeanemoon','zeeduivel','zee-egel','zeehond','zeeleeuw','zeemeeuw','zeepaardje','zeester','zwaan','zwaluw','zwarte weduwe','zwijn']
+
+puts 'kies je dier'
+dier = gets.chomp
+
+if dieren.include?(dier)
+  puts 'Jij koos voor ' + dier
+else
+  puts 'Je dier staat niet in de lijst'
+end
