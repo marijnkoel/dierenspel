@@ -13,17 +13,25 @@ dieren = ['aal','aap','adder','alligator','anaconda','ansjovis','antilope','aren
 'vinvis','vleermuis','vogelbekdier','vos','walvis','walibi','wasbeer','wesp','wezel','wolf','wolfspin','worm','yak','zalm','zebra',
 'zeeanemoon','zeeduivel','zee-egel','zeehond','zeeleeuw','zeemeeuw','zeepaardje','zeester','zwaan','zwaluw','zwarte weduwe','zwijn']
 
-used = ['aap']
+used = []
+counter = 0
 
-puts 'kies je dier'
-dier = gets.chomp
+while counter < 3
 
-if dieren.include?(dier) and used.include?(dier) == false
-  puts 'Jij koos voor ' + dier
-  used.push dier
-else
-  puts 'Je dier staat niet in de lijst of is gebruikt'
+  puts 'kies je dier'
+  dier = gets.chomp
+
+  if dieren.include?(dier) and used.include?(dier) == false
+    puts 'Jij koos voor ' + dier
+    used.push dier
+  else
+    puts 'Je dier staat niet in de lijst of is gebruikt'
+    counter += 1
+    puts counter
+  end
 end
+
+puts 'je hebt verloren'
 
 last_animal = dier
 last_letter = last_animal.split("").last
