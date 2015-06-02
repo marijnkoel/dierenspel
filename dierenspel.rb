@@ -13,11 +13,14 @@ dieren = ['aal','aap','adder','alligator','anaconda','ansjovis','antilope','aren
 'vinvis','vleermuis','vogelbekdier','vos','walvis','walibi','wasbeer','wesp','wezel','wolf','wolfspin','worm','yak','zalm','zebra',
 'zeeanemoon','zeeduivel','zee-egel','zeehond','zeeleeuw','zeemeeuw','zeepaardje','zeester','zwaan','zwaluw','zwarte weduwe','zwijn']
 
+used = ['aap']
+
 puts 'kies je dier'
 dier = gets.chomp
 
-if dieren.include?(dier)
+if dieren.include?(dier) and used.include?(dier) == false
   puts 'Jij koos voor ' + dier
+  used.push dier
 else
-  puts 'Je dier staat niet in de lijst'
+  puts 'Je dier staat niet in de lijst of is gebruikt'
 end
