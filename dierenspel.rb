@@ -24,3 +24,6 @@ if dieren.include?(dier) and used.include?(dier) == false
 else
   puts 'Je dier staat niet in de lijst of is gebruikt'
 end
+
+last_animal = dier
+last_letter = last_animal.split("").last
