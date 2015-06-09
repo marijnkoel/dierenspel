@@ -30,6 +30,15 @@ while counter < 3
     puts 'Jij koos voor ' + dier
     used.push dier
     last_dier = dier
+    last_letter = last_dier.split("").last
+    while true
+      pc = dieren[rand(dieren.length)]
+      break if dieren.include?(pc) && used.include?(pc) == false && pc.split("")[0] == last_letter
+    end
+
+    last_dier = pc
+    puts 'je tegenstander koos voor ' + pc
+
   elsif (dier.split("")[0] == last_letter) == false
     puts 'je laatste letter van je dier klopt niet'
     counter += 1
@@ -39,6 +48,7 @@ while counter < 3
     counter += 1
     puts 'je kan nog ' + counter.to_s + ' keer een fout maken'
   end
+
 end
 
 puts 'je hebt verloren'
