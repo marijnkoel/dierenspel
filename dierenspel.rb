@@ -3,7 +3,7 @@ dieren = ['aal','aap','adder','alligator','anaconda','ansjovis','antilope','aren
 'cobra','coyote','dagpauwoog','das','dolfijn','dromedaris','duif','dwerguil','eekhoorn','eend','egel','ekster','eland','ezel',
 'fazant','flamingo','fret','fuut','gans','gazelle','geit','gekko','gerbil','gier','giraffe','gnoe','gorilla','grizzlybeer',
 'haai','haas','hagedis','hamerhaai','hamster','havik','hermelijn','hert','hoen','hommel','hond','hooiwagen','huismus',
-'huisspin','hyena','ijsbeer','ijsvogel','jacktluipaard','jaguar','jakhals','kaaiman','kabeljauw','kameel','kameleon','kangoeroe',
+'huisspin','hyena','ijsbeer','ijsvogel','jachtluipaard','jaguar','jakhals','kaaiman','kabeljauw','kameel','kameleon','kangoeroe',
 'karper','kat','kerkuil','kever','kikker','kluut','koekoek','kolibrie','konijn','koolmees','kraai','kraanvogel','kruisspin',
 'kwartel','lama','landmeeuw','leeuw','leguaan','lepelaar','lieveheersbeestje','lynx','makreel','marmot','marter','meeuw','mestkever',
 'mier','miereneter','mijt','mol','muis','mus','naaktslak','nachtegaal','nerts','neushoorn','nijlpaard','oehoe','olifant','ooievaar','orka',
@@ -16,22 +16,29 @@ dieren = ['aal','aap','adder','alligator','anaconda','ansjovis','antilope','aren
 used = []
 counter = 0
 
-while counter < 3
+puts 'kies je startdier'
+startdier = gets.chomp
+last_dier = startdier
 
+while counter < 3
   puts 'kies je dier'
   dier = gets.chomp
 
-  if dieren.include?(dier) and used.include?(dier) == false
+  last_letter = last_dier.split("").last
+
+  if dieren.include?(dier) && used.include?(dier) == false && dier.split("")[0] == last_letter
     puts 'Jij koos voor ' + dier
     used.push dier
+    last_dier = dier
+  elsif (dier.split("")[0] == last_letter) == false
+    puts 'je laatste letter van je dier klopt niet'
+    counter += 1
+    puts 'je kan nog ' + counter.to_s + ' keer een fout maken'
   else
     puts 'Je dier staat niet in de lijst of is gebruikt'
     counter += 1
-    puts counter
+    puts 'je kan nog ' + counter.to_s + ' keer een fout maken'
   end
 end
 
 puts 'je hebt verloren'
-
-last_animal = dier
-last_letter = last_animal.split("").last
